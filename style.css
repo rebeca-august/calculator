@@ -120,6 +120,17 @@ body{
 }
 
 
+@media screen and (max-width: 600px){
 
+    .calculator{
+        width: 90vw;
+        height: 80vh;
+        margin: 25px auto;
+        overflow: hidden;
+    }
 
-
+    .row{
+        flex: 0 1 350px;
+        grid-gap: 10px;
+    }
+}
