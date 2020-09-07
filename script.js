@@ -4,12 +4,9 @@ const equalsButton = document.querySelector("[data=equals]");
 const allClearButton = document.querySelector("[data=all-clear]");
 const display = document.querySelector(".display");
 
+
 const Calculator = {
     init() {
-        window.addEventListener("keydown", function (e) {
-
-        });
-
         for (const button of numberButtons) {
             button.addEventListener("click", () => {
                 const value = button.innerText;
@@ -36,6 +33,7 @@ const Calculator = {
                 this.setOperation(operation.innerText);
             });
         }
+
 
         allClearButton.addEventListener("click", () => this.resetCalculator());
 
@@ -98,12 +96,12 @@ const Calculator = {
                 result = firstOperand * secondOperand;
                 break;
             case "÷":
-                result = firstOperand / secondOperand;
+                result = (firstOperand / secondOperand).toFixed(3);
                 break;
             default:
                 throw new Error("Unknown operation");
         }
-        this.result = result.toFixed(3);
+        this.result = result;
         this.appendToDisplay(this.result);
     },
 
@@ -120,4 +118,4 @@ const Calculator = {
     },
 };
 
-
+Calculator.init();
